@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta content=“width=device-width, initial-scale=1.0” name=“viewport”>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
+    <title>Homepage</title>
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid mx-auto">
+        <div class="container">
+            <h1 class="display-4">Hot Restaurant</h1>
+            <hr>
+            <p class="lead">We only have 5 tables! Book your seat before they all are gone!</p>
+            <!-- <button type="button" class="btn btn-primary">View Tables</button> -->
+            <button type="button" class="btn btn-danger">
+                <a class="reserveLink" href="reserve.html">
+                    Make Reservation </a>
+            </button>
+            <button type="button" class="btn btn-primary" id="B1">
+                <a class="homeLink" href="home.html">Home </a>
+            </button>
+        </div>
+    </div>
+    <div class="card mx-auto">
+        <div class="card-header">
+            <h4>Current Reservations</h4>
+        </div>
+        <div class="card-body">
+            <ul id="tableList" class="list-group">
+                <li class="list-group-item mt-4">
+                    <h2>Table #1</h2>
+                    <hr>
+                    <h2>ID: asdfa</h2>
+                    <h2>Name: asdfasd</h2>
+                    <h2>Email: asdfasdf</h2>
+                    <h2>Phone: fasdfas</h2>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card mx-auto mt-4">
+        <div class="card-header">
+            <h4>Waiting List</h4>
+        </div>
+        <div class="card-body">
+
+        </div>
+    </div>
+
+    <div id="C2" class="mx-auto">
+        <p>
+            <a href="#">Clear Table</a> |
+            <a href="#"> API Table Link</a> |
+            <a href="#">API Wait List</a>
+        </p>
+    </div>
+    <script>
+        $.getJSON("/api/tables", function (err, data) {
+            console.log(err);
+            console.log(data);
+        }) 
+    </script>
+</body>
+
+
+</html>
