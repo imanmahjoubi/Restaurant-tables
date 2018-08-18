@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery.js"></script>
 
+
     <title>Add Reservation</title>
 
 </head>
@@ -33,22 +34,22 @@
 
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name">
+                    <input type="text" class="form-control" name="name" id="name">
                 </div>
 
                 <div class="form-group">
                     <label for="phone">Phone Number</label>
-                    <input type="text" class="form-control" id="phone">
+                    <input type="text" class="form-control" name="phone" id="phone">
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="text" class="form-control" id="email">
+                    <input type="text" class="form-control"  name="email" id="email">
                 </div>
 
                 <div class="form-group">
                     <label for="unique">Unique ID</label>
-                    <input type="text" class="form-control" id="unique">
+                    <input type="text" class="form-control" name="unique" id="unique">
                 </div>
 
             </form>
@@ -63,6 +64,25 @@
 
 </div>
 
+<script type="text/javascript">
+    // Question: What does this code do?
+    $("#add-btn").on("click", function(event) {
+        event.preventDefault();
+        var newtable = {
+            name: $("#name").val().trim(),
+            email: $("#email").val().trim(),
+            phone: $("#phone").val().trim(),
+            unique_id: $("#unique").val().trim(),
+        };
+
+        // Question: What does this code do??
+        $.post("/api/tables", newtable)
+            .then(function(data) {
+                console.log("index.html", data);
+                alert("Reservation is done!");
+            });
+    });
+</script>
 
 
 
