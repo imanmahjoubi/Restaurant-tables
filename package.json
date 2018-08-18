@@ -1,0 +1,20 @@
+{
+  "name": "restaurant",
+  "version": "1.0.0",
+  "description": "NodeJS app with express",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/imanmahjoubi/Restaurant-tables.git"
+  },
+  "author": "imanoutcha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imanmahjoubi/Restaurant-tables/issues"
+  },
+  "homepage": "https://github.com/imanmahjoubi/Restaurant-tables#readme"
+}
